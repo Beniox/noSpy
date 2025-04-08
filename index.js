@@ -4,9 +4,9 @@ import puppeteer from "puppeteer";
 const app = express();
 const port = 3000;
 
-const DEFAULT_PAGE = "https://github.com/Beniox/noSpy";
-const DEBUG = false;
-const QUALITY = 100;
+const DEFAULT_PAGE = process.env.DEFAULT_PAGE ??  "https://github.com/Beniox/noSpy";
+const DEBUG = process.env.DEBUG ?? false;
+const QUALITY = process.env.QUALITY ?? 100;
 
 const minimal_args = [
     '--autoplay-policy=user-gesture-required',
@@ -134,6 +134,7 @@ function createHtml(img, title){
 * {
     padding: 0;
     margin: 0;
+    overscroll-behavior: none;
 }
 
     img {

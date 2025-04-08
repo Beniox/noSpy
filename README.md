@@ -1,5 +1,17 @@
 # noSpy
 
+Are you afraid that your super secret HTML page is being stolen.
+Or do you want to have your overly complex website working on Internet Explorer? 
+
+Every browser currently supports the ismap image attribute, therefore it runs on every browser.
+
+It does not even need JavaScript at all, it is all plain HTML. The Backend runs on Bun with JavaScript, but nobody can see it.
+
+
+---
+
+## 🖼️ Overview
+
 This project is a simple Node.js + Puppeteer server that:
 
 - Loads a webpage in a headless browser
@@ -57,15 +69,21 @@ http://localhost:3000
 
 # Configuration
 
+The configuration can be set in a .env file or directly in the code. The default values are:
+
 ``` javascript
 const DEFAULT_PAGE = "https://github.com/Beniox/noSpy";
 const PORT = 3000;
 const DEBUG = false;
 ```
 
+- `DEFAULT_PAGE`: The URL to load in the headless browser. Change this to any page you want to interact with.
+- `PORT`: The port on which the server will run. Change this if you want to use a different port.
+- `DEBUG`: Set to `true` to add a point to the screenshot where the click was made. This is useful for debugging but should be set to `false` in production.
 
 
-# How It Works
+
+# How It Works 
 
 - Sessions are stored by IP address (Map<ip, Puppeteer.Page>).
 
